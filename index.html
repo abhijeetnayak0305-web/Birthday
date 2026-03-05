@@ -8,6 +8,7 @@
 
 <style>
 
+
 body{
 margin:0;
 font-family:Poppins;
@@ -125,11 +126,82 @@ margin-top:20px;
 font-size:28px;
 cursor:pointer;
 }
+/* Animated gradient background */
+
+body{
+background:linear-gradient(-45deg,#ff9a9e,#ff758c,#ff7eb3,#fad0c4);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+
+/* Cinematic intro screen */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0f0f0f;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+text-align:center;
+}
+
+.intro-title{
+font-family:Great Vibes;
+font-size:70px;
+color:#ff4d6d;
+}
+
+.intro-sub{
+font-size:18px;
+opacity:.8;
+margin-bottom:30px;
+}
+
+
+/* glass card effect */
+
+.card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(20px);
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+
+/* glowing highlight */
+
+.highlight{
+color:#ff2e63;
+font-weight:600;
+text-shadow:0 0 8px rgba(255,0,90,0.5);
+}
 
 </style>
 </head>
 
 <body>
+
+<div id="intro">
+
+<h1 class="intro-title">For Shayeee ❤️</h1>
+<p class="intro-sub">A little surprise from Abhi</p>
+
+<button onclick="enterSite()">Open Your Birthday Surprise</button>
+
+</div>
 
 <section class="hero">
 
@@ -328,6 +400,41 @@ document.body.appendChild(conf);
 }
 
 }
+
+function enterSite(){
+
+document.getElementById("intro").style.opacity="0";
+
+setTimeout(()=>{
+document.getElementById("intro").style.display="none";
+},600);
+
+}
+
+
+/* heart click ripple */
+
+document.addEventListener("click",function(e){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.style.position="absolute";
+heart.style.left=e.pageX+"px";
+heart.style.top=e.pageY+"px";
+heart.style.fontSize="20px";
+
+heart.animate([
+{transform:"scale(1)",opacity:1},
+{transform:"scale(3)",opacity:0}
+],{duration:800});
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),800);
+
+});
 
 </script>
 
