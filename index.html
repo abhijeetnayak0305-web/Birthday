@@ -94,6 +94,7 @@ position:relative;
 width:100%;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.25);
+transition:opacity 1s ease-in-out;
 }
 
 .fade{
@@ -205,7 +206,7 @@ text-shadow:0 0 8px rgba(255,0,90,0.5);
 
 <section class="hero">
 
-<h1>Shayeee ❤️</h1>
+<h1>Happy Birthday Shayeee ❤️</h1>
 
 <p id="typing"></p>
 
@@ -317,6 +318,39 @@ To my home away from home ❤️
 </p>
 
 <h2 style="font-family:Dancing Script;font-size:42px;color:#ff2e63;">— Abhi</h2>
+
+<button onclick="openLetter()" style="margin-top:20px;">Final Letter from Abhi 💌</button>
+
+<div id="secretLetter" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:9999;">
+
+<div style="background:white; color:#333; padding:35px; border-radius:20px; max-width:500px; text-align:center; font-family:Poppins;">
+
+<h2 style="font-family:Great Vibes; color:#ff2e63;">A Letter For You ❤️</h2>
+
+<p style="line-height:1.7">
+
+If you’re reading this, it means you finished the whole little surprise I made for you.
+
+I just wanted to say…  
+thank you for existing in my life.
+
+You don’t even realise how much peace you bring to me just by being yourself.
+
+I hope this year brings you happiness, laughter, success, and everything your heart wishes for.
+
+And no matter where life takes us, I’ll always be cheering for you.
+
+</p>
+
+<p style="font-family:Dancing Script; font-size:26px; color:#ff2e63;">
+— Abhi
+</p>
+
+<button onclick="closeLetter()" style="margin-top:10px;">Close ❤️</button>
+
+</div>
+
+</div>
 
 <div class="secret" onclick="secretMessage()">💖</div>
 
@@ -435,6 +469,14 @@ document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),800);
 
 });
+
+function openLetter(){
+document.getElementById("secretLetter").style.display="flex";
+}
+
+function closeLetter(){
+document.getElementById("secretLetter").style.display="none";
+}
 
 </script>
 
